@@ -66,8 +66,8 @@ var uuid_1 = require("uuid");
 var mongoose_1 = __importDefault(require("mongoose"));
 var Response_1 = require("./models/Response");
 dotenv_1.default.config();
-var app = (0, express_1.default)();
-var server = (0, http_1.createServer)(app);
+var app = express_1.default();
+var server = http_1.createServer(app);
 var PORT = process.env.PORT || 8080;
 var wss = new ws_1.default.Server({ server: server });
 var clients = new Map();
@@ -77,7 +77,7 @@ wss.on("connection", function (ws) { return __awaiter(void 0, void 0, void 0, fu
         switch (_a.label) {
             case 0:
                 console.log("A new client connected");
-                id = (0, uuid_1.v4)();
+                id = uuid_1.v4();
                 metadata = { id: id };
                 clients.set(ws, metadata);
                 return [4 /*yield*/, Response_1.Response.find()];
