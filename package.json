@@ -28,5 +28,8 @@
     "@types/ws": "^7.4.7",
     "concurrently": "^6.2.1",
     "nodemon": "^2.0.12"
+  },
+  "engines": {
+    "node": "15.x"
   }
 }
